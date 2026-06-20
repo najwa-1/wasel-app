@@ -116,9 +116,13 @@ wss.on("connection", (socket) => {
     switch (msg.type) {
       case "join": handleJoin(socket, msg); break;
       case "sdp":
+<<<<<<< HEAD
       case "ice":
       case "accept":
       case "reject": relay(socket, msg); break;
+=======
+      case "ice": relay(socket, msg); break;
+>>>>>>> 44656a9da972ee8053692d3aa351c0db82f05b80
       case "leave": leaveSession(socket); break;
       default: send(socket, { type: "error", message: `Unknown message type: ${msg.type}` });
     }
